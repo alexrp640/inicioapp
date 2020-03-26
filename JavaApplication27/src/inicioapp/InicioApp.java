@@ -32,55 +32,8 @@ public class InicioApp {
             'w', 'x', 'y', 'z'};
         contador = new int[letra.length];
         
-        contarpalabras(frase);
-        mostrarResultado(frase);
+        contarpalabras.contarpalabras(frase);
+        mostrarresultado.mostrarResultado(frase);
     }
-
-    private static void contarpalabras(String frase) {
-        int numPalabras = 1;
-        boolean espaciosSeguidos = false;
-        frase = frase.trim();
-        for (int i = 0; i < frase.length(); i++) {  
-            if (frase.charAt(i) == ' ') {
-                if(!espaciosSeguidos){
-                 espaciosSeguidos = true;
-                numPalabras++;
-                }
-            } else {
-                espaciosSeguidos = false;
-            }
-            
-        }
-       System.out.println("Hay " + numPalabras + "  palabras");
-       
-        int numCaracteres = 0; 
-        for (int i = 0; i < frase.length(); i++) {  
-            if (frase.charAt(i) != ' ') {
-                numCaracteres++;
-                }
-            }
-        System.out.println("Hay " + numCaracteres + " letras");
-            
-        for (int i = 0; i < frase.length(); i++) {  
-                if (frase.charAt(i) != ' ') {
-                       for (int j = 0; j < letra.length; j++) {
-                           if (frase.charAt(i) == letra[j]) {
-                               contador[j]++;
-                           }
-                       }
-                }
-            }
-        
-        
-        }
-    private static void mostrarResultado(String frase){
-        for(int i=0;i<letra.length;i++){
-            if(contador[i]!=0){
-                System.out.println(letra[i]+" se repite " + contador[i]);
-            }
-            
-        }
-    }
-       
     
 }
